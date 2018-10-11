@@ -8,8 +8,9 @@ class FunctionValuesTest {
 
     @Test
     void getFunctionTable() {
-        assertEquals(FunctionValues.getFunctionTable(),"| 0 | 0.0 |\n| 1 | 1.557407724654902 |\n");
-        FunctionValues.setB(10);
-        FunctionValues.setH(10);
+        FunctionValues functionValues = new FunctionValues();
+        assertEquals(functionValues.getFunctionTable(),"| 0 | 0.0 |\n| 1 | 1.557407724654902 |\n");
+        functionValues.setB(10);
+        functionValues.setH(10);
     }
 }

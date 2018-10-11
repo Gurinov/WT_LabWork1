@@ -1,28 +1,36 @@
 package by.bsuir.gurinov.task5;
 
 public class SequenceGenerator {
-    private static int[] numbers = {1,2,3,14,5,6,7,8,9,10,11,12};
-    public static void setNumbers(int[] numbers) {
-        SequenceGenerator.numbers = numbers;
+    private int[] numbers;
+    public void setNumbers(int[] numbers) {
+        this.numbers = numbers;
     }
 
-    public static int getNumberOfItemsToDelete() {
-        int maxIncreasingLength = 0, curIncreasingLength;
-        boolean isIncreasing;
+    public SequenceGenerator(int[] numbers) {
+        this.numbers = numbers;
+    }
+
+    public SequenceGenerator() {
+        this.numbers = new int[]{1,2,3,5,6,7,8,9,10,11,14,12};
+    }
+
+    public int getNumberOfItemsToDelete() {
+        int maxLength = 0;
+        int[] maxSubsequence = new int[numbers.length];
 
         for (int i = 0; i < numbers.length; i++) {
-            isIncreasing = true;
-            curIncreasingLength = 1;
-            for (int j = i + 1; (j < numbers.length) && isIncreasing; j++) {
-                if (numbers[j - 1] < numbers[j]) {
-                    curIncreasingLength++;
-                } else {
-                    isIncreasing = false;
+            int max = 0;
+            for (int j = 0; j < i; j++) {
+                if (numbers[j] < numbers[i] && maxSubsequence[j]>max) {
+                    max = maxSubsequence[j];
                 }
             }
-            maxIncreasingLength = Math.max(maxIncreasingLength, curIncreasingLength);
+            maxSubsequence[i] = max + 1;
+            if(maxLength < maxSubsequence[i]){
+                maxLength = maxSubsequence[i];
+            }
         }
-        return numbers.length - maxIncreasingLength;
+        return numbers.length - maxLength;
     }
 
 }

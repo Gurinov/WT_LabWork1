@@ -1,10 +1,20 @@
 package by.bsuir.gurinov.task8;
 
 public class Union {
-    private static double[] numbersA = {1,2.5,3,5,26};
-    private static double[] numbersB = {1.5,2.3,18,19,28};
+    private double[] numbersA;
+    private double[] numbersB;
 
-    public static String joinArrays(){
+    public Union(double[] numbersA, double[] numbersB) {
+        this.numbersA = numbersA;
+        this.numbersB = numbersB;
+    }
+
+    public Union() {
+        this.numbersA = new double[]{1,2.5,3,5,26};
+        this.numbersB = new double[]{1.5,2.3,18,19,28};
+    }
+
+    public String joinArrays(){
         String result = "";
         int positionInNumbersB = 0;
         for(int i = 0; i < numbersA.length-1; ){

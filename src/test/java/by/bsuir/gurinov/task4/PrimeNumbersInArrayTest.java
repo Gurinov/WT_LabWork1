@@ -8,11 +8,12 @@ class PrimeNumbersInArrayTest {
 
     @Test
     void isPrimeNumbers() {
-        assertTrue(PrimeNumbersInArray.isPrimeNumbers(1));
-        assertTrue(PrimeNumbersInArray.isPrimeNumbers(2));
-        assertTrue(PrimeNumbersInArray.isPrimeNumbers(11));
-        assertFalse(PrimeNumbersInArray.isPrimeNumbers(4));
-        assertFalse(PrimeNumbersInArray.isPrimeNumbers(-10));
-        assertFalse(PrimeNumbersInArray.isPrimeNumbers(0));
+        PrimeNumbersInArray primeNumbersInArray = new PrimeNumbersInArray();
+        assertTrue(primeNumbersInArray.isPrimeNumbers(1));
+        assertTrue(primeNumbersInArray.isPrimeNumbers(2));
+        assertTrue(primeNumbersInArray.isPrimeNumbers(11));
+        assertFalse(primeNumbersInArray.isPrimeNumbers(4));
+        assertFalse(primeNumbersInArray.isPrimeNumbers(-10));
+        assertFalse(primeNumbersInArray.isPrimeNumbers(0));
     }
 }

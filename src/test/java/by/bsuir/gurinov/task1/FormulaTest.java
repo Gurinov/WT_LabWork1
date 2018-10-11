@@ -7,6 +7,7 @@ class FormulaTest {
 
     @Test
     void getResult() {
-        assertTrue((Formula.getResult(0,0) - 0.5) < 0.001);
+        Formula formula = new Formula(0,0);
+        assertTrue((formula.getResult() - 0.5) < 0.001);
     }
 }

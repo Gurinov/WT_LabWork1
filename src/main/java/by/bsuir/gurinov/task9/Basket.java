@@ -55,7 +55,7 @@ public final class Basket {
 
     @Override
     public String toString() {
-        return getClass().getName() + "@balls: " + balls.toString();
+        return getClass().getName() + "balls: " + balls.toString();
     }
 
     public double getBallsWeight(){

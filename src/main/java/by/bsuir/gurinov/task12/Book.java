@@ -74,7 +74,7 @@ public class Book implements Comparable<Book>, Cloneable {
 
     @Override
     public int compareTo(Book book) {
-        return isbn.compareTo(book.isbn); //compareResult;
+        return isbn.compareTo(book.isbn);
     }
 
     public Book(String title, String author, int price, String isbn) {

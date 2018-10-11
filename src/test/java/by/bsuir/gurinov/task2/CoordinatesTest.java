@@ -8,11 +8,12 @@ class CoordinatesTest {
 
     @Test
     void isValidCoordinates() {
-        assertTrue(Coordinates.isValidCoordinates(1,1));
-        assertFalse(Coordinates.isValidCoordinates(10,10));
-        Coordinates.setCellWeight(10);
-        assertTrue(Coordinates.isValidCoordinates(10,10));
-        Coordinates.setCellWeight(-10);
-        assertFalse(Coordinates.isValidCoordinates(10,10));
+        Coordinates coordinates = new Coordinates();
+        assertTrue(coordinates.isValidCoordinates(1,1));
+        assertFalse(coordinates.isValidCoordinates(10,10));
+        coordinates.setCellWeight(10);
+        assertTrue(coordinates.isValidCoordinates(10,10));
+        coordinates.setCellWeight(-10);
+        assertFalse(coordinates.isValidCoordinates(10,10));
     }
 }

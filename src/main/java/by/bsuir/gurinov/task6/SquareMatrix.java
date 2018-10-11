@@ -1,12 +1,21 @@
 package by.bsuir.gurinov.task6;
 
 public class SquareMatrix {
-    private static double[] numbers = {1,2,3,14,5,6,7,8,9,10,11,12};
-    public static void setNumbers(double[] numbers) {
-        SquareMatrix.numbers = numbers;
+    private double[] numbers;
+    public void setNumbers(double[] numbers) {
+        this.numbers = numbers;
     }
 
-    public static double[][] generateSquareMatrix(){
+    public SquareMatrix(double[] numbers) {
+        this.numbers = numbers;
+    }
+
+    public SquareMatrix() {
+        this.numbers = new double[]{1,2,3,14,5,6,7,8,9,10,11,12};
+    }
+
+
+    public double[][] generateSquareMatrix(){
         int length = numbers.length;
         int position;
         double[][] squareMatrix = new double[length][length];

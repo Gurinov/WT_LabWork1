@@ -4,13 +4,21 @@ import java.util.Objects;
 
 public final class Ball {
 
-    private final double weight;
-    private final String color;
+    private double weight;
+    private String color;
     public double getWeight() {
         return weight;
     }
     String getColor() {
         return color;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     @Override

@@ -8,8 +8,9 @@ class SquareMatrixTest {
 
     @Test
     void generateSquareMatrix() {
-        SquareMatrix.setNumbers(new double[]{1});
+        SquareMatrix squareMatrix = new SquareMatrix();
+        squareMatrix.setNumbers(new double[]{1});
         double[][] array = new double[][]{{1}};
-        assertEquals(SquareMatrix.generateSquareMatrix()[0][0], array[0][0]);
+        assertEquals(squareMatrix.generateSquareMatrix()[0][0], array[0][0]);
     }
 }

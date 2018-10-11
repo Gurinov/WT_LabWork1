@@ -8,10 +8,9 @@ class SequenceGeneratorTest {
 
     @Test
     void getNumberOfItemsToDelete() {
-        assertEquals(SequenceGenerator.getNumberOfItemsToDelete(),1);
-        SequenceGenerator.setNumbers(new int[]{1,2,36,37,32,48});
-        assertEquals(SequenceGenerator.getNumberOfItemsToDelete(),1);
-        SequenceGenerator.setNumbers(new int[]{1,3,10,15,4,20,5,11,6,48});
-        assertEquals(SequenceGenerator.getNumberOfItemsToDelete(),1);
+        SequenceGenerator sequenceGenerator = new SequenceGenerator();
+        assertEquals(sequenceGenerator.getNumberOfItemsToDelete(),1);
+        sequenceGenerator.setNumbers(new int[]{1,2,36,32,8,48});
+        assertEquals(sequenceGenerator.getNumberOfItemsToDelete(),2);
     }
 }

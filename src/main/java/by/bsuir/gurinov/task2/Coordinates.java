@@ -2,29 +2,35 @@ package by.bsuir.gurinov.task2;
 
 public class Coordinates {
 
-    private static int cellWeight = 1;
-    private static int max_X;
-    private static int max_Y;
-    private static int min_X;
-    private static int min_Y;
+    private int cellWeight;
+    private int max_X;
+    private int max_Y;
+    private int min_X;
+    private int min_Y;
 
-    public static void setCellWeight(int cellWeight) {
+    public Coordinates(int cellWeight) {
+        this.cellWeight = cellWeight;
+    }
+    public Coordinates() {
+        this.cellWeight = 1;
+    }
+
+    public void setCellWeight(int cellWeight) {
         if(cellWeight > 0)
-            Coordinates.cellWeight = cellWeight;
+            this.cellWeight = cellWeight;
         else
-            Coordinates.cellWeight = 1;
-
+            this.cellWeight = 1;
         setCoordinates();
     }
 
-    private static void setCoordinates(){
+    private void setCoordinates(){
         max_X = cellWeight * 6;
         max_Y = cellWeight * 5;
         min_X = cellWeight * 4;
-        min_Y = cellWeight * 3;
+        min_Y = -cellWeight * 3;
     }
 
-    public static boolean isValidCoordinates(int x, int y){
+    public boolean isValidCoordinates(int x, int y){
 
         setCoordinates();
         if(y > 0 && y < max_Y){
@@ -35,7 +41,6 @@ public class Coordinates {
             if(x > -max_X && x < max_X)
                 return true;
         }
-
         return false;
     }
 }
